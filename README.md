@@ -1,7 +1,9 @@
 # 3DBoundingBox
 1. Скачать предобученные веса.
 
-В корневую папку скачать файл по ссылке https://drive.google.com/file/d/15MOYyTc06O1l9jasgp8uCpZACdiHDaDs/view?usp=sharing
+В корневую папку скачать файл по ссылке 
+
+https://drive.google.com/file/d/15MOYyTc06O1l9jasgp8uCpZACdiHDaDs/view?usp=sharing
 
 В папку "weights" скачать два файла по ссылкам:
 
