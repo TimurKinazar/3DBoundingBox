@@ -15,3 +15,5 @@ https://drive.google.com/file/d/1t1qpZZ27Gn1a3x__pePGMM_xRuif1UtA/view?usp=shari
 python Run.py
 
 Визульный вывод модели находится в папке "out"
+
+Почитать описание модели можно в файле model.pdf.
