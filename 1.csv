@@ -1,0 +1,197 @@
+model,length,width,height
+AM General Hummer SUV 2000,4686,2197,1956
+Acura RL Sedan 2012,4917,1847,1450
+Acura TL Sedan 2012,4973,1847,1453
+Acura TL Type-S 2008,4808,"1,834",1440
+Acura TSX Sedan 2012,4973,1847,1450
+Acura Integra Type R 2001,4380,1695,1320
+Acura ZDX Hatchback 2012,4887,1994,1595
+Aston Martin V8 Vantage Convertible 2012,4382,1867,1270
+Aston Martin V8 Vantage Coupe 2012,4382,1867,1270
+Aston Martin Virage Convertible 2012,4382,1867,1270
+Aston Martin Virage Coupe 2012,4382,1867,1270
+Audi RS 4 Convertible 2008,4525,1799,1386
+Audi A5 Coupe 2012,4626,1854,1372
+Audi TTS Coupe 2012,4041,1764,1346
+Audi R8 Coupe 2012,4431,1904,1249
+Audi V8 Sedan 1994,4874,1814,1420
+Audi 100 Sedan 1994,4590,1729,1421
+Audi 100 Wagon 1994,4892,1778,1448
+Audi TT Hatchback 2011,4041,1764,1346
+Audi S6 Sedan 2011,4931,2086,1440
+Audi S5 Convertible 2012,4640,1854,1369
+Audi S5 Coupe 2012,4718,1854,1382
+Audi S4 Sedan 2012,4703,1826,1427
+Audi S4 Sedan 2007,4703,1826,1427
+Audi TT RS Coupe 2012,4041,1764,1346
+BMW ActiveHybrid 5 Sedan 2012,5000,2000,1500
+BMW 1 Series Convertible 2012,4227,1748,1420
+BMW 1 Series Coupe 2012,4380,1803,1430
+BMW 3 Series Sedan 2012,4624,1811,1429
+BMW 3 Series Wagon 2012,4624,1811,1429
+BMW 6 Series Convertible 2007,4820,1855,1374
+BMW X5 SUV 2007,4686,2197,1500
+BMW X6 SUV 2012,4917,1847,1450
+BMW M3 Coupe 2012,4973,1847,1453
+BMW M5 Sedan 2010,4808,"1,834",1440
+BMW M6 Convertible 2010,4973,1847,1450
+BMW X3 SUV 2012,4380,1695,1320
+BMW Z4 Convertible 2012,4887,1994,1595
+Bentley Continental Supersports Conv. Convertible 2012,4382,1867,1270
+Bentley Arnage Sedan 2009,4382,1867,1270
+Bentley Mulsanne Sedan 2011,4382,1867,1270
+Bentley Continental GT Coupe 2012,4382,1867,1270
+Bentley Continental GT Coupe 2007,4525,1799,1386
+Bentley Continental Flying Spur Sedan 2007,4626,1854,1372
+Bugatti Veyron 16.4 Convertible 2009,4041,1764,1346
+Bugatti Veyron 16.4 Coupe 2009,4431,1904,1249
+Buick Regal GS 2012,4874,1814,1420
+Buick Rainier SUV 2007,4590,1729,1421
+Buick Verano Sedan 2012,4892,1778,1448
+Buick Enclave SUV 2012,4041,1764,1346
+Cadillac CTS-V Sedan 2012,4931,2086,1440
+Cadillac SRX SUV 2012,4640,1854,1369
+Cadillac Escalade EXT Crew Cab 2007,4718,1854,1382
+Chevrolet Silverado 1500 Hybrid Crew Cab 2012,4703,1826,1427
+Chevrolet Corvette Convertible 2012,4703,1826,1427
+Chevrolet Corvette ZR1 2012,4041,1764,1346
+Chevrolet Corvette Ron Fellows Edition Z06 2007,5000,2000,1500
+Chevrolet Traverse SUV 2012,4227,1748,1420
+Chevrolet Camaro Convertible 2012,4380,1803,1430
+Chevrolet HHR SS 2010,4624,1811,1429
+Chevrolet Impala Sedan 2007,4624,1811,1429
+Chevrolet Tahoe Hybrid SUV 2012,4820,1855,1374
+Chevrolet Sonic Sedan 2012,4686,2197,1500
+Chevrolet Express Cargo Van 2007,4917,1847,1450
+Chevrolet Avalanche Crew Cab 2012,4973,1847,1453
+Chevrolet Cobalt SS 2010,4808,"1,834",1440
+Chevrolet Malibu Hybrid Sedan 2010,4973,1847,1450
+Chevrolet TrailBlazer SS 2009,4380,1695,1320
+Chevrolet Silverado 2500HD Regular Cab 2012,4887,1994,1595
+Chevrolet Silverado 1500 Classic Extended Cab 2007,4382,1867,1270
+Chevrolet Express Van 2007,4382,1867,1270
+Chevrolet Monte Carlo Coupe 2007,4382,1867,1270
+Chevrolet Malibu Sedan 2007,4382,1867,1270
+Chevrolet Silverado 1500 Extended Cab 2012,4525,1799,1386
+Chevrolet Silverado 1500 Regular Cab 2012,4626,1854,1372
+Chrysler Aspen SUV 2009,4041,1764,1346
+Chrysler Sebring Convertible 2010,4431,1904,1249
+Chrysler Town and Country Minivan 2012,4874,1814,1420
+Chrysler 300 SRT-8 2010,4590,1729,1421
+Chrysler Crossfire Convertible 2008,4892,1778,1448
+Chrysler PT Cruiser Convertible 2008,4041,1764,1346
+Daewoo Nubira Wagon 2002,4931,2086,1440
+Dodge Caliber Wagon 2012,4640,1854,1369
+Dodge Caliber Wagon 2007,4718,1854,1382
+Dodge Caravan Minivan 1997,4703,1826,1427
+Dodge Ram Pickup 3500 Crew Cab 2010,4703,1826,1427
+Dodge Ram Pickup 3500 Quad Cab 2009,4041,1764,1346
+Dodge Sprinter Cargo Van 2009,5000,2000,1500
+Dodge Journey SUV 2012,4227,1748,1420
+Dodge Dakota Crew Cab 2010,4380,1803,1430
+Dodge Dakota Club Cab 2007,4624,1811,1429
+Dodge Magnum Wagon 2008,4624,1811,1429
+Dodge Challenger SRT8 2011,4820,1855,1374
+Dodge Durango SUV 2012,4686,2197,1500
+Dodge Durango SUV 2007,4917,1847,1450
+Dodge Charger Sedan 2012,4973,1847,1453
+Dodge Charger SRT-8 2009,4808,"1,834",1440
+Eagle Talon Hatchback 1998,4973,1847,1450
+FIAT 500 Abarth 2012,4380,1695,1320
+FIAT 500 Convertible 2012,4887,1994,1595
+Ferrari FF Coupe 2012,4382,1867,1270
+Ferrari California Convertible 2012,4382,1867,1270
+Ferrari 458 Italia Convertible 2012,4382,1867,1270
+Ferrari 458 Italia Coupe 2012,4382,1867,1270
+Fisker Karma Sedan 2012,4525,1799,1386
+Ford F-450 Super Duty Crew Cab 2012,4626,1854,1372
+Ford Mustang Convertible 2007,4041,1764,1346
+Ford Freestar Minivan 2007,4431,1904,1249
+Ford Expedition EL SUV 2009,4874,1814,1420
+Ford Edge SUV 2012,4590,1729,1421
+Ford Ranger SuperCab 2011,4892,1778,1448
+Ford GT Coupe 2006,4041,1764,1346
+Ford F-150 Regular Cab 2012,4931,2086,1440
+Ford F-150 Regular Cab 2007,4640,1854,1369
+Ford Focus Sedan 2007,4718,1854,1382
+Ford E-Series Wagon Van 2012,4703,1826,1427
+Ford Fiesta Sedan 2012,4703,1826,1427
+GMC Terrain SUV 2012,4041,1764,1346
+GMC Savana Van 2012,5000,2000,1500
+GMC Yukon Hybrid SUV 2012,4227,1748,1420
+GMC Acadia SUV 2012,4380,1803,1430
+GMC Canyon Extended Cab 2012,4624,1811,1429
+Geo Metro Convertible 1993,4624,1811,1429
+HUMMER H3T Crew Cab 2010,4820,1855,1374
+HUMMER H2 SUT Crew Cab 2009,4686,2197,1956
+Honda Odyssey Minivan 2012,4917,1847,1450
+Honda Odyssey Minivan 2007,4973,1847,1453
+Honda Accord Coupe 2012,4808,"1,834",1440
+Honda Accord Sedan 2012,4973,1847,1450
+Hyundai Veloster Hatchback 2012,4380,1695,1320
+Hyundai Santa Fe SUV 2012,4887,1994,1595
+Hyundai Tucson SUV 2012,4382,1867,1270
+Hyundai Veracruz SUV 2012,4382,1867,1270
+Hyundai Sonata Hybrid Sedan 2012,4382,1867,1270
+Hyundai Elantra Sedan 2007,4382,1867,1270
+Hyundai Accent Sedan 2012,4525,1799,1386
+Hyundai Genesis Sedan 2012,4626,1854,1372
+Hyundai Sonata Sedan 2012,4041,1764,1346
+Hyundai Elantra Touring Hatchback 2012,4431,1904,1249
+Hyundai Azera Sedan 2012,4874,1814,1420
+Infiniti G Coupe IPL 2012,4590,1729,1421
+Infiniti QX56 SUV 2011,4892,1778,1448
+Isuzu Ascender SUV 2008,4041,1764,1346
+Jaguar XK XKR 2012,4931,2086,1440
+Jeep Patriot SUV 2012,4640,1854,1369
+Jeep Wrangler SUV 2012,4718,1854,1382
+Jeep Liberty SUV 2012,4703,1826,1427
+Jeep Grand Cherokee SUV 2012,4703,1826,1427
+Jeep Compass SUV 2012,4041,1764,1346
+Lamborghini Reventon Coupe 2008,5000,2000,1500
+Lamborghini Aventador Coupe 2012,4227,1748,1420
+Lamborghini Gallardo LP 570-4 Superleggera 2012,4380,1803,1430
+Lamborghini Diablo Coupe 2001,4624,1811,1429
+Land Rover Range Rover SUV 2012,4624,1811,1429
+Land Rover LR2 SUV 2012,4820,1855,1374
+Lincoln Town Car Sedan 2011,4686,2197,1500
+MINI Cooper Roadster Convertible 2012,4917,1847,1450
+Maybach Landaulet Convertible 2012,4973,1847,1453
+Mazda Tribute SUV 2011,4808,"1,834",1440
+McLaren MP4-12C Coupe 2012,4973,1847,1450
+Mercedes-Benz 300-Class Convertible 1993,4380,1695,1320
+Mercedes-Benz C-Class Sedan 2012,4887,1994,1595
+Mercedes-Benz SL-Class Coupe 2009,4382,1867,1270
+Mercedes-Benz E-Class Sedan 2012,4382,1867,1270
+Mercedes-Benz S-Class Sedan 2012,4382,1867,1270
+Mercedes-Benz Sprinter Van 2012,4382,1867,1270
+Mitsubishi Lancer Sedan 2012,4525,1799,1386
+Nissan Leaf Hatchback 2012,4626,1854,1372
+Nissan NV Passenger Van 2012,4041,1764,1346
+Nissan Juke Hatchback 2012,4431,1904,1249
+Nissan 240SX Coupe 1998,4874,1814,1420
+Plymouth Neon Coupe 1999,4590,1729,1421
+Porsche Panamera Sedan 2012,4892,1778,1448
+Ram C/V Cargo Van Minivan 2012,4041,1764,1346
+Rolls-Royce Phantom Drophead Coupe Convertible 2012,4931,2086,1440
+Rolls-Royce Ghost Sedan 2012,4640,1854,1369
+Rolls-Royce Phantom Sedan 2012,4718,1854,1382
+Scion xD Hatchback 2012,4703,1826,1427
+Spyker C8 Convertible 2009,4703,1826,1427
+Spyker C8 Coupe 2009,4041,1764,1346
+Suzuki Aerio Sedan 2007,5000,2000,1500
+Suzuki Kizashi Sedan 2012,4227,1748,1420
+Suzuki SX4 Hatchback 2012,4380,1803,1430
+Suzuki SX4 Sedan 2012,4624,1811,1429
+Tesla Model S Sedan 2012,4624,1811,1429
+Toyota Sequoia SUV 2012,4820,1855,1374
+Toyota Camry Sedan 2012,4686,2197,1500
+Toyota Corolla Sedan 2012,4917,1847,1450
+Toyota 4Runner SUV 2012,4973,1847,1453
+Volkswagen Golf Hatchback 2012,4808,"1,834",1440
+Volkswagen Golf Hatchback 1991,4973,1847,1450
+Volkswagen Beetle Hatchback 2012,4380,1695,1320
+Volvo C30 Hatchback 2012,4887,1994,1595
+Volvo 240 Sedan 1993,4382,1867,1270
+Volvo XC90 SUV 2007,4917,1847,1450
+smart fortwo Convertible 2012,4973,1847,1453

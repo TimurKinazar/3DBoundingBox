@@ -107,9 +107,9 @@ def plot_regressed_3d_bbox(img, cam_to_img, box_2d, dimensions, alpha, theta_ray
     if img_2d is not None:
         plot_2d_box(img_2d, box_2d)
 
-    r = plot_3d_box(img, cam_to_img, orient, dimensions, location) # 3d boxes
+    r,z1, z2 = plot_3d_box(img, cam_to_img, orient, dimensions, location) # 3d boxes
 
-    return location, r
+    return location, r, z1,z2
 
 def main():
     df = pd.read_csv('1.csv')
@@ -165,7 +165,7 @@ def main():
         start_time = time.time()
 
         img_file = img_path + img_id + ".png"
-#         print('\n'+img_path+'\n')
+#         print('\n'+img_id+'\n')
         # P for each frame
         # calib_file = calib_path + id + ".txt"
         print(img_file)
@@ -175,8 +175,10 @@ def main():
         # print(img.shape)
         detections = yolo.detect(yolo_img)
         ampl = 0
+        lenel = 0
         for detection in detections:
             print('\n')
+            lenel+=1
             ampl +=1
             if not averages.recognized_class(detection.detected_class):
                 continue
@@ -234,9 +236,9 @@ def main():
             alpha -= np.pi
 
             if FLAGS.show_yolo:
-                location, r = plot_regressed_3d_bbox(img, proj_matrix, box_2d, dim, alpha, theta_ray, truth_img)
+                location, r, z1, c = plot_regressed_3d_bbox(img, proj_matrix, box_2d, dim, alpha, theta_ray, truth_img)
             else:
-                location, r = plot_regressed_3d_bbox(img, proj_matrix, box_2d, dim, alpha, theta_ray)
+                location, r, z1, c = plot_regressed_3d_bbox(img, proj_matrix, box_2d, dim, alpha, theta_ray)
 
             # if not FLAGS.hide_debug:
             #     print('Estimated pose: %s'%location)
@@ -249,13 +251,310 @@ def main():
             print('Possible car model:', classes[int(str(pred_class))])
             alpha = angleofcam/img.shape[0] * r/30
             h = df[df['model'] == classes[int(str(pred_class))]].values[0][3]
-            if alpha > math.atan(h/math.sqrt(4*H*(H - h))):
-                alpha = math.atan(h/math.sqrt(4*H*(H - h))) - 0.05
-#             print(alpha, math.atan(h/math.sqrt(4*H*(H - h))))
-#             print(img.shape,"&&&&")
-            s1 = (h/H + math.sqrt((h*h)/(H*H) - 4*math.tan(alpha)*math.tan(alpha)*(H-h)/H))*H/(2*math.tan(alpha))
-            s2 = (h/H - math.sqrt((h*h)/(H*H) - 4*math.tan(alpha)*math.tan(alpha)*(H-h)/H))*H/(2*math.tan(alpha))
-            print('Distance to car:',max(s1,s2),'mm')
+            if 4*H*(H - h)<=0:
+                print("Сan't estimate the distance")
+            else:
+                if alpha > math.atan(h/math.sqrt(4*H*(H - h))):
+                    alpha = math.atan(h/math.sqrt(4*H*(H - h))) - 0.05
+    #             print(alpha, math.atan(h/math.sqrt(4*H*(H - h))))
+    #             print(img.shape,"&&&&")
+                s1 = (h/H + math.sqrt((h*h)/(H*H) - 4*math.tan(alpha)*math.tan(alpha)*(H-h)/H))*H/(2*math.tan(alpha))
+                s2 = (h/H - math.sqrt((h*h)/(H*H) - 4*math.tan(alpha)*math.tan(alpha)*(H-h)/H))*H/(2*math.tan(alpha))
+                print('Distance to car:',max(s1,s2),'mm')
+            a = 0.63
+            if img_id == '0000000043':
+                if lenel == 1:
+                    k = (1 -sqrt((1313*a-z1[0])*(1313*a - z1[0]) + (546*a - z1[1])*(546*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 -sqrt((716*a-z1[0])*(716*a - z1[0]) + (391*a - z1[1])*(391*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((781*a-z1[0])*(781*a - z1[0]) + (341*a - z1[1])*(341*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 -sqrt((1093*a-z1[0])*(1093*a - z1[0]) + (423*a - z1[1])*(423*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 5:
+                    k = (1 - sqrt((982*a-z1[0])*(982*a - z1[0]) + (348*a - z1[1])*(348*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '0000000098':
+                if lenel == 1:
+                    k = (1 - sqrt((1303*a-z1[0])*(1303*a - z1[0]) + (496*a - z1[1])*(496*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((1180*a-z1[0])*(1180*a - z1[0]) + (406*a - z1[1])*(406*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((761*a-z1[0])*(761*a - z1[0]) + (399*a - z1[1])*(399*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((657*a-z1[0])*(657*a - z1[0]) + (461*a - z1[1])*(461*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 5:
+                    k = (1 - sqrt((898*a-z1[0])*(898*a - z1[0]) + (312*a - z1[1])*(312*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '0000000191':
+                if lenel == 1:
+                    k = (1 - sqrt((1212*a-z1[0])*(1212*a - z1[0]) + (449*a - z1[1])*(449*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((757*a-z1[0])*(757*a - z1[0]) + (398*a - z1[1])*(398*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((838*a-z1[0])*(838*a - z1[0]) + (335*a - z1[1])*(335*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((1129*a-z1[0])*(1129*a - z1[0]) + (395*a - z1[1])*(395*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 5:
+                    k = (1 - sqrt((980*a-z1[0])*(980*a - z1[0]) + (325*a - z1[1])*(325*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '0000000272':
+                k = (1 - sqrt((1251*a-z1[0])*(1251*a - z1[0]) + (467*a - z1[1])*(467*a - z1[1]))/c)*100
+                if k>0:
+                    print(k,'%')
+                else:
+                    print(0,'%')
+            elif img_id == '0000000559':
+                if lenel == 1:
+                    k = (1 - sqrt((753*a-z1[0])*(753*a - z1[0]) + (400*a - z1[1])*(400*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((815*a-z1[0])*(815*a - z1[0]) + (366*a - z1[1])*(366*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '0000000722':
+                if lenel == 1:
+                    k = (1 - sqrt((1395*a-z1[0])*(1395*a - z1[0]) + (508*a- z1[1])*(508*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((849*a-z1[0])*(849*a - z1[0]) + (377*a - z1[1])*(377*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((1035*a-z1[0])*(1035*a - z1[0]) + (360*a - z1[1])*(360*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '0000001038':
+                if lenel == 1:
+                    k = (1 - sqrt((371*a-z1[0])*(371*a - z1[0]) + (418*a - z1[1])*(418*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((812*a-z1[0])*(812*a - z1[0]) + (366*a - z1[1])*(366*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((900*a-z1[0])*(900*a - z1[0]) + (316*a - z1[1])*(316*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((1141*a -z1[0])*(1141*a - z1[0]) + (489*a - z1[1])*(489*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '1000000529':
+                if lenel == 1:
+                    k = (1 - sqrt((563*a-z1[0])*(563*a - z1[0]) + (462*a - z1[1])*(462*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((685*a-z1[0])*(685*a - z1[0]) + (405*a - z1[1])*(405*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '1000000594':
+                if lenel == 1:
+                    k = (1 - sqrt((648*a-z1[0])*(648*a - z1[0]) + (470*a - z1[1])*(470*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((796*a-z1[0])*(796*a - z1[0]) + (359*a - z1[1])*(359*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((1268*a-z1[0])*(1268*a - z1[0]) + (458*a - z1[1])*(458*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((1071*a-z1[0])*(1071*a - z1[0]) + (352*a - z1[1])*(352*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '1000000616':
+                if lenel == 1:
+                    k = (1 - sqrt((1319*a-z1[0])*(1319*a - z1[0]) + (489*a - z1[1])*(489*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((1021*a-z1[0])*(1021*a - z1[0]) + (313*a - z1[1])*(313*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '1000000776':
+                if lenel == 1:
+                    k = (1 - sqrt((1458*a-z1[0])*(1458*a - z1[0]) + (446*a - z1[1])*(446*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((1160*a-z1[0])*(1160*a - z1[0]) + (373*a - z1[1])*(373*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((656*a-z1[0])*(656*a - z1[0]) + (359*a - z1[1])*(359*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((1103*a -z1[0])*(1103*a - z1[0]) + (349*a - z1[1])*(349*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 5:
+                    k = (1 - sqrt((930*a-z1[0])*(930*a - z1[0]) + (335*a - z1[1])*(335*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 6:
+                    k = (1 - sqrt((1036*a-z1[0])*(1036*a - z1[0]) + (340*a - z1[1])*(340*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 7:
+                    k = (1 - sqrt((584*a -z1[0])*(584*a - z1[0]) + (386*a - z1[1])*(386*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 8:
+                    k = (1 - sqrt((435*a-z1[0])*(435*a - z1[0]) + (426*a - z1[1])*(426*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 9:
+                    k = (1 - sqrt((754*a -z1[0])*(754*a - z1[0]) + (328*a - z1[1])*(328*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+            elif img_id == '1000000864':
+                if lenel == 1:
+                    k = (1 - sqrt((1651*a-z1[0])*(1651*a - z1[0]) + (463*a - z1[1])*(463*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 2:
+                    k = (1 - sqrt((1031*a-z1[0])*(1031*a - z1[0]) + (302*a - z1[1])*(302*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 3:
+                    k = (1 - sqrt((962*a-z1[0])*(962*a - z1[0]) + (348*a - z1[1])*(348*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 4:
+                    k = (1 - sqrt((655*a -z1[0])*(655*a - z1[0]) + (355*a - z1[1])*(355*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
+                elif lenel == 5:
+                    k = (1 - sqrt((802*a-z1[0])*(802*a - z1[0]) + (310*a - z1[1])*(310*a - z1[1]))/c)*100
+                    if k>0:
+                        print(k,'%')
+                    else:
+                        print(0,'%')
         if FLAGS.show_yolo:
             numpy_vertical = np.concatenate((truth_img, img), axis=0)
             cv2.imwrite('out/'+img_id + ".png", numpy_vertical)
